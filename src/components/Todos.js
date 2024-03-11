@@ -1,7 +1,7 @@
 import React from "react";
-import { ImCheckboxChecked } from "react-icons/im";
-import { MdDeleteForever } from "react-icons/md";
-import { MdChangeCircle } from "react-icons/md";
+import { MdAutoMode } from "react-icons/md";
+import { MdCancel } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 
 function Todos({ note, toggleComplete, handleDelete, handleEdit }) {
   const [newDescription, setNewDescription] = React.useState(note.description);
@@ -29,16 +29,16 @@ function Todos({ note, toggleComplete, handleDelete, handleEdit }) {
           className="button-complete"
           onClick={() => toggleComplete(note)}
         >
-          <ImCheckboxChecked />
+          <MdCheckCircle className="MdAutoMode" />
         </button>
         <button
           className="button-edit"
           onClick={() => handleEdit(note, newDescription)}
         >
-          <MdChangeCircle />
+          <MdAutoMode className="MdAutoMode" />
         </button>
         <button className="button-delete" onClick={() => handleDelete(note.id)}>
-          <MdDeleteForever />
+          <MdCancel className="MdAutoMode" />
         </button>
       </div>
     </div>
