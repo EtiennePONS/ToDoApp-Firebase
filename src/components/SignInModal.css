@@ -1,0 +1,17 @@
+.position-absolute {
+  min-width: 400px;
+}
+.modal-dialog {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.signInSubmit {
+  /* background-color: #415268; */
+  background-color: yellow;
+  color: white;
+  margin: 20px;
+}
+.modal-title {
+  padding: 10px;
+}

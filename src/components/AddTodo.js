@@ -1,5 +1,6 @@
+import "./AddTodo.css";
 import React from "react";
-import { db } from "../firebase";
+import { db } from "../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 
 function AddTodo() {
@@ -17,15 +18,14 @@ function AddTodo() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input_container">
-        <input
-          type="text"
-          placeholder=""
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div className="btn_container">
+      <input
+        type="text"
+        placeholder=""
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+
+      <div>
         <button>Add</button>
       </div>
     </form>

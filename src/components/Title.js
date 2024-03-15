@@ -1,6 +1,7 @@
+import "./Title.css";
 function Title() {
   return (
-    <div className="title">
+    <div>
       <h1>Todo App</h1>
     </div>
   );
