@@ -22,11 +22,9 @@ export default function SignUpModal() {
       (inputs.current[1].value.length || inputs.current[2].value.length) < 6
     ) {
       setValidation("6 characters min");
-      console.log("validation", validation);
       return;
     } else if (inputs.current[1].value !== inputs.current[2].value) {
       setValidation("Passwords do not match");
-      console.log("validation", validation);
       return;
     }
 

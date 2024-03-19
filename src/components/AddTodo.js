@@ -1,10 +1,13 @@
 import "./AddTodo.css";
-import React from "react";
+import React, { useContext } from "react";
 import { db } from "../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
+import { UserContext } from "../context/UserContext";
 
 function AddTodo() {
   const [description, setDescription] = React.useState("");
+  const user = useContext(UserContext);
+  console.log(user.currentUser.uid);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,6 +15,7 @@ function AddTodo() {
       await addDoc(collection(db, "notes"), {
         description,
         completed: false,
+        utilisateur: user.currentUser.uid,
       });
       setDescription("");
     }

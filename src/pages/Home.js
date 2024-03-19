@@ -3,7 +3,6 @@ import { UserContext } from "../context/UserContext";
 
 function Home() {
   const currentUser = useContext(UserContext);
-  console.dir(currentUser);
 
   return (
     <div className="container p-5">

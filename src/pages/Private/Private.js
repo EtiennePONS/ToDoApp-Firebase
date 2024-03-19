@@ -4,7 +4,8 @@ import { Outlet, Navigate } from "react-router-dom";
 
 export default function Private() {
   const { currentUser } = useContext(UserContext);
-  console.log("Private", currentUser);
+  const user = currentUser.uid;
+  console.log(user);
 
   if (!currentUser) {
     <Navigate to="/ToDoApp-Firebase" />;

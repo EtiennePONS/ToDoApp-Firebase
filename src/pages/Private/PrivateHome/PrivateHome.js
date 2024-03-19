@@ -1,9 +1,11 @@
 import Title from "../../../components/Title";
 import AddTodo from "../../../components/AddTodo";
 import Todos from "../../../components/Todos";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
 import { db } from "../../../firebase-config";
 import {
+  where,
   onSnapshot,
   collection,
   query,
@@ -13,19 +15,27 @@ import {
 } from "firebase/firestore";
 
 function PrivateHome() {
+  const context = useContext(UserContext);
+  const user = context.currentUser.uid;
+
   const [notes, setNotes] = useState([]);
 
   React.useEffect(() => {
-    const q = query(collection(db, "notes"));
+    const q = query(collection(db, "notes"), where("utilisateur", "==", user));
+
     const unsub = onSnapshot(q, (querySnapshot) => {
       let notesArray = [];
+
       querySnapshot.forEach((doc) => {
-        notesArray.push({ ...doc.data(), id: doc.id });
+        notesArray.push({
+          ...doc.data(),
+          id: doc.id,
+        });
       });
       setNotes(notesArray);
     });
     return () => unsub();
-  }, []);
+  });
 
   const toggleComplete = async (note) => {
     await updateDoc(doc(db, "notes", note.id), {
