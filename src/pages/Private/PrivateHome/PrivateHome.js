@@ -1,4 +1,3 @@
-import Title from "../../../components/Title";
 import AddTodo from "../../../components/AddTodo";
 import Todos from "../../../components/Todos";
 import React, { useState, useContext } from "react";
@@ -51,10 +50,7 @@ function PrivateHome() {
 
   return (
     <div className="container p-5">
-      <h1 className="display-3 text-light mb-4">Home Sweet Private Home</h1>
-      <div>
-        <Title />
-      </div>
+      <h1 className="display-3 text-light mb-4">Bienvenue </h1>
       <div>
         <AddTodo />
       </div>

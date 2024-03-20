@@ -61,7 +61,7 @@ export default function SignUpModal() {
           <div className="position-absolute top-50 start-50 translate-middle">
             <div className="modal-dialog">
               <div className="modal-content">
-                <h1 className="modal-title">Sign Up</h1>
+                <h1 className="modal-title">Inscription</h1>
                 <form
                   ref={formRef}
                   className="sign-up-form"
@@ -69,7 +69,7 @@ export default function SignUpModal() {
                 >
                   <div className="mb-3">
                     <label htmlFor="signUpEmail" className="form-label">
-                      Email adress
+                      Adresse Email
                     </label>
                     <input
                       ref={addInputs}
@@ -82,7 +82,7 @@ export default function SignUpModal() {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="signUpPwd" className="form-label">
-                      Password
+                      Mot de Passe
                     </label>
                     <input
                       ref={addInputs}
@@ -95,7 +95,7 @@ export default function SignUpModal() {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="repeatPwd" className="form-label">
-                      Confirm password
+                      Confirmation du mot de Passe
                     </label>
                     <input
                       ref={addInputs}
@@ -107,16 +107,8 @@ export default function SignUpModal() {
                     />
                     <p className="text-danger mt-1">{validation}</p>
                   </div>
-                  <button className="btn signUpSubmit">Submit</button>{" "}
+                  <button className="btn signUpSubmit">Soumettre</button>
                 </form>
-                {/* <button
-                  onClick={() => {
-                    toggleModals("close");
-                  }}
-                  className="btn cancel"
-                >
-                  Cancel
-                </button> */}
               </div>
             </div>
           </div>

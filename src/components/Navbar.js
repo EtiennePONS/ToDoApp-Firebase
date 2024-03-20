@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { LuListTodo } from "react-icons/lu";
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext.js";
 import { signOut } from "firebase/auth";
@@ -22,36 +22,33 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-light bg-light px-4">
-      <Link to="/" className="navbar-brand">
-        AuthJS
-      </Link>
-      <div>
-        <button
-          onClick={() => {
-            toggleModals("signUp");
-          }}
-          className="btn btn-turquoise"
-        >
-          Sign Up
-        </button>
-        <button
-          onClick={() => {
-            toggleModals("signIn");
-          }}
-          className="btn btn-turquoise ms-2"
-        >
-          Sign In
-        </button>
-        <button
-          onClick={() => {
-            toggleModals("close");
-            logOut();
-          }}
-          className="btn btn-rouge ms-2"
-        >
-          Log Out
-        </button>
-      </div>
+      <LuListTodo className="LuListTodo" />
+
+      <button
+        onClick={() => {
+          toggleModals("signUp");
+        }}
+        className="btn btn-turquoise"
+      >
+        Inscription
+      </button>
+      <button
+        onClick={() => {
+          toggleModals("signIn");
+        }}
+        className="btn btn-turquoise ms-2"
+      >
+        Connexion
+      </button>
+      <button
+        onClick={() => {
+          toggleModals("close");
+          logOut();
+        }}
+        className="btn btn-rouge ms-2"
+      >
+        Quitter
+      </button>
     </nav>
   );
 }

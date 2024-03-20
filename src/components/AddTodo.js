@@ -21,7 +21,7 @@ function AddTodo() {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="Addtodo">
       <input
         type="text"
         placeholder=""
@@ -29,9 +29,7 @@ function AddTodo() {
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <div>
-        <button>Add</button>
-      </div>
+      <button className="btn btnAdd">Ajouter</button>
     </form>
   );
 }

@@ -47,7 +47,7 @@ export default function SignInModal() {
           <div className="position-absolute top-50 start-50 translate-middle">
             <div className="modal-dialog">
               <div className="modal-content">
-                <h1 className="modal-title">Sign In</h1>
+                <h1 className="modal-title">Connexion</h1>
                 <form
                   ref={formRef}
                   className="sign-In-form"
@@ -55,7 +55,7 @@ export default function SignInModal() {
                 >
                   <div className="mb-3">
                     <label htmlFor="signInEmail" className="form-label">
-                      Email adress
+                      Adresse Email
                     </label>
                     <input
                       ref={addInputs}
@@ -68,7 +68,7 @@ export default function SignInModal() {
                   </div>
                   <div className="mb-3">
                     <label htmlFor="signInPwd" className="form-label">
-                      Password
+                      Mot de Passe
                     </label>
                     <input
                       ref={addInputs}
@@ -80,7 +80,7 @@ export default function SignInModal() {
                     />
                     <p className="text-danger mt-1">{validation}</p>
                   </div>
-                  <button className="btn signInSubmit">Submit</button>
+                  <button className="btn signInSubmit">Soumettre</button>
                 </form>
                 {/* <button
                   onClick={() => {
