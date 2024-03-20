@@ -30,7 +30,7 @@ function Navbar() {
         }}
         className="btn btn-turquoise"
       >
-        Inscription
+        Souscrire
       </button>
       <button
         onClick={() => {
