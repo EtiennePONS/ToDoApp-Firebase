@@ -5,9 +5,9 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 667px) {
+@media screen and (min-width: 390px) {
   .task_container {
-    width: 90%;
+    width: 100%;
   }
   .task {
     margin-right: 0px;

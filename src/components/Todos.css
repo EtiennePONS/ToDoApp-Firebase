@@ -9,7 +9,7 @@
   align-items: center;
   box-shadow: 1px 2px 10px #ddd;
 }
-.todo input {
+.input {
   margin-left: 5px;
   cursor: pointer;
   width: 60%;
@@ -23,7 +23,7 @@
   font-weight: 500;
 }
 .todo_container {
-  max-width: 388px;
+  max-width: 400px;
   margin: auto;
 }
 .button-complete,
@@ -47,4 +47,8 @@
 }
 .button-delete {
   color: rgb(255, 122, 98);
+}
+.todo {
+  margin-left: -35px;
+  width: 365px;
 }
