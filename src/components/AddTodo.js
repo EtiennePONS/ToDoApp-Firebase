@@ -7,7 +7,6 @@ import { UserContext } from "../context/UserContext";
 function AddTodo() {
   const [description, setDescription] = React.useState("");
   const user = useContext(UserContext);
-  console.log(user.currentUser.uid);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +23,7 @@ function AddTodo() {
     <form onSubmit={handleSubmit} className="Addtodo">
       <input
         type="text"
-        placeholder=""
+        placeholder="Entrez une tache"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />

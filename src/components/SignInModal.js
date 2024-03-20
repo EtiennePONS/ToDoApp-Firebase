@@ -74,7 +74,7 @@ export default function SignInModal() {
                       ref={addInputs}
                       name="pwd"
                       required
-                      type="text"
+                      type="password"
                       className="form-control"
                       id="signInPwd"
                     />

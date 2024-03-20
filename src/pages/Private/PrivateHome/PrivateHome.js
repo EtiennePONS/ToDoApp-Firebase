@@ -50,7 +50,7 @@ function PrivateHome() {
 
   return (
     <div className="container p-5">
-      <h1 className="display-3 text-light mb-4">Bienvenue </h1>
+      <h1 className="display-3 text-light mb-4">Bienvenue</h1>
       <div>
         <AddTodo />
       </div>

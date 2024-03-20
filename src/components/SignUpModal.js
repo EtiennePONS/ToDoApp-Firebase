@@ -67,6 +67,32 @@ export default function SignUpModal() {
                   className="sign-up-form"
                   onSubmit={handleForm}
                 >
+                  {/* <div className="mb-3">
+                    <label htmlFor="signUpPrenom" className="form-label">
+                      Prénom
+                    </label>
+                    <input
+                      ref={addInputs}
+                      name="prenom"
+                      required
+                      type="text"
+                      className="form-control"
+                      id="signUpPrenom"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="signUpNom" className="form-label">
+                      NOM
+                    </label>
+                    <input
+                      ref={addInputs}
+                      name="prenom"
+                      required
+                      type="text"
+                      className="form-control"
+                      id="signUpNom"
+                    />
+                  </div> */}
                   <div className="mb-3">
                     <label htmlFor="signUpEmail" className="form-label">
                       Adresse Email
