@@ -1,0 +1,28 @@
+.Addtodo {
+  /* margin-right: 10px;
+  margin-left: 10px; */
+  background: white;
+  opacity: 90%;
+  padding: 5px 0px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 2px 10px #ddd;
+}
+.Addtodo input {
+  margin-left: 5px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.btnAdd {
+  background-color: #415268;
+  color: white;
+  margin-right: 4px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Todos.css";
 import { MdAutoMode } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import { MdCheckCircle } from "react-icons/md";

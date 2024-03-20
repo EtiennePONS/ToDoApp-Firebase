@@ -1,63 +1,27 @@
 import "./App.css";
-import React, { useState } from "react";
-import Title from "./components/Title";
-import AddTodo from "./components/AddTodo";
-import Todos from "./components/Todos";
-import {
-  onSnapshot,
-  collection,
-  query,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from "firebase/firestore";
-import { db } from "./firebase";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import SignUpModal from "./components/SignUpModal";
+import SignInModal from "./components/SignInModal";
+import Private from "./pages/Private/Private";
+import PrivateHome from "./pages/Private/PrivateHome/PrivateHome";
 
 function App() {
-  const [notes, setNotes] = useState([]);
-
-  React.useEffect(() => {
-    const q = query(collection(db, "notes"));
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      let notesArray = [];
-      querySnapshot.forEach((doc) => {
-        notesArray.push({ ...doc.data(), id: doc.id });
-      });
-      setNotes(notesArray);
-    });
-    return () => unsub();
-  }, []);
-  const handleEdit = async (note, description) => {
-    await updateDoc(doc(db, "notes", note.id), { description: description });
-  };
-  const toggleComplete = async (note) => {
-    await updateDoc(doc(db, "notes", note.id), {
-      completed: !note.completed,
-    });
-  };
-  const handleDelete = async (id) => {
-    await deleteDoc(doc(db, "notes", id));
-  };
-
   return (
     <div className="App">
-      <div>
-        <Title />
-      </div>
-      <div>
-        <AddTodo />
-      </div>
-      <div className="todo_container">
-        {notes.map((note) => (
-          <Todos
-            key={note.id}
-            note={note}
-            toggleComplete={toggleComplete}
-            handleDelete={handleDelete}
-            handleEdit={handleEdit}
+      <SignUpModal />
+      <SignInModal />
+      <Navbar />
+      <Routes>
+        <Route path="/ToDoApp-Firebase" element={<Home />}></Route>
+        <Route path="/ToDoApp-Firebase/private" element={<Private />}>
+          <Route
+            path="/ToDoApp-Firebase/private/private-home"
+            element={<PrivateHome />}
           />
-        ))}
-      </div>
+        </Route>
+      </Routes>
     </div>
   );
 }
