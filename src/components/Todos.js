@@ -8,6 +8,7 @@ function Todos({ note, toggleComplete, handleDelete, handleEdit }) {
   const [newDescription, setNewDescription] = React.useState(note.description);
   const HandleEdit = (e) => {
     e.preventDefault();
+    console.log(e);
     if (note.completed === true) {
       setNewDescription(note.description);
     } else {

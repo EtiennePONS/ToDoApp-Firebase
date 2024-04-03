@@ -16,13 +16,13 @@ import {
 function PrivateHome() {
   const context = useContext(UserContext);
   const user = context.currentUser.uid;
-
   const [notes, setNotes] = useState([]);
 
   React.useEffect(() => {
+    console.log("effect call");
     const q = query(collection(db, "notes"), where("utilisateur", "==", user));
 
-    const unsub = onSnapshot(q, (querySnapshot) => {
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let notesArray = [];
 
       querySnapshot.forEach((doc) => {
@@ -33,8 +33,10 @@ function PrivateHome() {
       });
       setNotes(notesArray);
     });
-    return () => unsub();
-  });
+    return () => {
+      unsubscribe();
+    };
+  }, [user]);
 
   const toggleComplete = async (note) => {
     await updateDoc(doc(db, "notes", note.id), {

@@ -82,14 +82,6 @@ export default function SignInModal() {
                   </div>
                   <button className="btn signInSubmit">Soumettre</button>
                 </form>
-                {/* <button
-                  onClick={() => {
-                    toggleModals("close");
-                  }}
-                  className="btn cancel"
-                >
-                  Cancel
-                </button> */}
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import { auth } from "../firebase-config.js";
 
 function Navbar() {
   const { toggleModals } = useContext(UserContext);
+  const user = useContext(UserContext);
   const navigate = useNavigate();
   const logOut = async () => {
     try {
@@ -24,31 +25,37 @@ function Navbar() {
     <nav className="navbar navbar-light bg-light px-4">
       <LuListTodo className="LuListTodo" />
 
-      <button
-        onClick={() => {
-          toggleModals("signUp");
-        }}
-        className="btn btn-turquoise"
-      >
-        Souscrire
-      </button>
-      <button
-        onClick={() => {
-          toggleModals("signIn");
-        }}
-        className="btn btn-turquoise ms-2"
-      >
-        Connexion
-      </button>
-      <button
-        onClick={() => {
-          toggleModals("close");
-          logOut();
-        }}
-        className="btn btn-rouge ms-2"
-      >
-        Quitter
-      </button>
+      {!user.currentUser && (
+        <button
+          onClick={() => {
+            toggleModals("signUp");
+          }}
+          className="btn btn-turquoise"
+        >
+          Souscrire
+        </button>
+      )}
+      {!user.currentUser && (
+        <button
+          onClick={() => {
+            toggleModals("signIn");
+          }}
+          className="btn btn-turquoise ms-2"
+        >
+          Connexion
+        </button>
+      )}
+      {user.currentUser && (
+        <button
+          onClick={() => {
+            toggleModals("close");
+            logOut();
+          }}
+          className="btn btn-rouge ms-2"
+        >
+          Quitter
+        </button>
+      )}
     </nav>
   );
 }
